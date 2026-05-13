@@ -1,0 +1,78 @@
+# ── Secrets & credentials ──────────────────────────────────────────────────
+.env
+*.pem
+*.key
+
+# ── Python ─────────────────────────────────────────────────────────────────
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+MANIFEST
+
+# ── Virtual environments ────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── Testing & coverage ──────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+coverage.xml
+*.cover
+
+# ── Type checking ────────────────────────────────────────────────────────────
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ── MLflow ───────────────────────────────────────────────────────────────────
+mlruns/
+mlartifacts/
+
+# ── Data files (generated / raw) ─────────────────────────────────────────────
+data/raw/*.csv
+data/raw/*.json
+data/raw/*.parquet
+data/processed/
+data/results/*.json
+data/results/*.parquet
+
+# ── Model artefacts ───────────────────────────────────────────────────────────
+models/*.joblib
+models/*.pkl
+models/*.pt
+models/*.onnx
+
+# ── Notebooks ─────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+pipeline_log.txt
+streamlit_out.txt
+streamlit_err.txt
+
+# ── Docker ────────────────────────────────────────────────────────────────────
+.docker/

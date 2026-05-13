@@ -1,0 +1,27 @@
+# Detection policy — loaded by decision_engine.py
+# Separating policy from code means ops/compliance can tune thresholds
+# without touching Python.  This is a common pattern in production fraud systems.
+
+thresholds:
+  alert: 0.70
+  monitor: 0.40
+  cooldown_hours: 24          # suppress duplicate alerts per user
+
+signal_weights:
+  statistical: 0.20
+  unsupervised: 0.25
+  supervised: 0.15
+  llm: 0.40                   # LLM gets highest weight: richest context
+
+# Additional score boosts applied AFTER weighted combination
+boosts:
+  new_counterparty: 0.10      # first-time payee flagged
+  night_large_wire: 0.15      # wire >3× baseline between 00:00–05:00
+  rapid_succession: 0.20      # >5 tx in 1 hour to different payees
+  geographic_velocity: 0.25   # impossible physical travel between tx
+
+llm_risk_boost:
+  high: 0.50
+  medium: 0.15
+  low: 0.00
+
